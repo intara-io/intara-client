@@ -1,17 +1,5 @@
 # Intara Python Client
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-  - [SERP Data Retrieval](#serp-data-retrieval)
-  - [Monthly Search Volume (MSV)](#monthly-search-volume-msv)
-  - [Alpha Parser](#alpha-parser)
-- [Location Codes](#location-codes)
-- [Notes](#notes)
-- [License](#license)
-
 ## Installation
 
 To install the package, use the following command:
@@ -48,23 +36,23 @@ print(serp_data[0])
 
 **Example Output:**
 
-```json
+```python
 {
-  'id': 'a9ed4c2f-0b7b-4aa8-b017-0140e28c1476',
-  'fetched_at': '2024-09-13T20:02:19.963084Z',
-  'type': 'organic',
-  'rank_group': 1,
-  'rank_absolute': 1,
-  'position': 'left',
-  'title': 'Pizza Hut | Delivery & Carryout - No One OutPizzas The Hut!',
-  'domain': 'www.pizzahut.com',
-  'url': 'https://www.pizzahut.com/',
-  'description': 'Discover classic & new menu items, find deals and enjoy seamless ordering for delivery and carryout. No One OutPizzas the Hut®.',
-  'is_paid': False,
-  'rating_value': None,
-  'rating_votes_count': None,
-  'rating_max': None,
-  'keyword_serp': '75301203-ee30-4a8e-b27c-9564d8ee4c58'
+  id: a9ed4c2f-0b7b-4aa8-b017-0140e28c1476,
+  fetched_at: 2024-09-13T20:02:19.963084Z,
+  type: organic,
+  rank_group: 1,
+  rank_absolute: 1,
+  position: left,
+  title: Pizza Hut | Delivery & Carryout - No One OutPizzas The Hut!,
+  domain: www.pizzahut.com,
+  url: https://www.pizzahut.com/,
+  description: Discover classic & new menu items, find deals and enjoy seamless ordering for delivery and carryout. No One OutPizzas the Hut®.,
+  is_paid: False,
+  rating_value: None,
+  rating_votes_count: None,
+  rating_max: None,
+  keyword_serp: 75301203-ee30-4a8e-b27c-9564d8ee4c58
 }
 ```
 
@@ -80,7 +68,7 @@ print(serp_data[0])
 
 **Example Output:**
 
-```json
+```python
 {
   'id': '8302e991-d44e-45f6-b7cb-072c4140bfe0',
   'fetched_at': '2024-09-14T11:02:41.100561Z',
