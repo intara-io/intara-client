@@ -100,7 +100,7 @@ print(msv_data)
 
 **Example Output:**
 
-```json
+```python
 {
   'id': 'e5620899-8917-4f04-bb01-dbc9cb634e0c',
   'keyword': 'pizza',
