@@ -46,11 +46,11 @@ class IntaraClient:
         url = self.api_url + f"research/alpha-url-parser/?url={url}&industry={industry}"
         if disable_cache:
             response = self.client.get(url + "&disable_cache=true")
-            while response.json().get("status") == "pending":
-                print("Waiting for response...")
-                time.sleep(3)
-                response = self.client.get(url, timeout=90)
-            return response.json()
+        else:
+            response = self.client.get(url, timeout=90)
 
-        response = self.client.get(url, timeout=90)
+        while response.json().get("status") == "pending":
+            print("Waiting for response...")
+            time.sleep(3)
+            response = self.client.get(url, timeout=90)
         return response.json()
