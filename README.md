@@ -6,13 +6,13 @@ To install the package, use the following command:
 
 ### pip
 ```bash
-pip install git+https://github.com/Tre-Jones-Consulting/intara-client
+pip install git+https://github.com/intara-io/intara-client
 ```
 
 ### poetry
 
 ```bash
-poetry add git+https://github.com/Tre-Jones-Consulting/intara-client
+poetry add git+https://github.com/intara-io/intara-client
 ```
 
 ## Usage
