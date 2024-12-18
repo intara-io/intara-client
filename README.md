@@ -56,6 +56,8 @@ print(serp_data[0])
 }
 ```
 
+**Note:** When `live=False` (or not set), the request is processed asynchronously. The user has to retry the request until the data is available.
+
 #### Using `location_code`
 
 You can specify a `location_code` to get location-specific SERP data.
@@ -88,6 +90,14 @@ print(serp_data[0])
 }
 ```
 
+#### Using `live`
+
+You can specify the `live` parameter to use the dataforseo's live API. This API has a rate limit of 12/requests per minute.
+
+```python
+serp_data = client.serp("pizza", live=True)
+```
+
 ### Monthly Search Volume (MSV)
 
 Retrieve MSV data for a given keyword.
@@ -117,6 +127,8 @@ print(msv_data)
 }
 ```
 
+**Note:** When `live=False` (or not set), the request is processed asynchronously. The user has to retry the request until the data is available.
+
 #### Using `location_code`
 
 ```python
@@ -142,6 +154,15 @@ print(msv_data)
   'cpc': 2.61,
   'last_updated': '2024-09-14T11:04:37.793329Z'
 }
+```
+
+#### Using `live`
+
+You can specify the `live` parameter to use the dataforseo's live API. This API has a rate limit of 12/requests per minute.
+
+```python
+msv_data = client.msv("pizza", live=True)
+print(msv_data)
 ```
 
 ### Alpha Parser
