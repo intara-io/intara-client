@@ -6,8 +6,7 @@ import requests
 class IntaraClient:
     def __init__(self, api_key: str) -> None:
         self.api_key = api_key
-        # self.api_url = "https://api.intara.io/api/"
-        self.api_url = "http://localhost:8000/api/"
+        self.api_url = "https://api.intara.io/api/"
         self.client = requests.Session()
         self.client.headers.update(
             {
