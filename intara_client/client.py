@@ -4,9 +4,11 @@ import requests
 
 
 class IntaraClient:
-    def __init__(self, api_key: str) -> None:
+    def __init__(self, api_key: str, api_url=None) -> None:
         self.api_key = api_key
         self.api_url = "https://api.intara.io/api/"
+        if api_url:
+            self.api_url = api_url
         self.client = requests.Session()
         self.client.headers.update(
             {
@@ -47,6 +49,24 @@ class IntaraClient:
         url = self.api_url + "research/msv/"
         querystring = {
             "keyword": keyword,
+            "location_code": location_code,
+            "live": live,
+        }
+
+        response = self.client.get(url, params=querystring, timeout=90)
+        if response.status_code == 202:
+            return {"detail": "Request is being processed. Please try again later."}
+        return response.json()
+
+    def keywords_for_site(
+        self,
+        site_url: str,
+        location_code: int = 2840,
+        live: bool = False,
+    ) -> dict:
+        url = self.api_url + "research/keywords-for-site/"
+        querystring = {
+            "site_url": site_url,
             "location_code": location_code,
             "live": live,
         }
