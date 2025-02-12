@@ -22,6 +22,7 @@ class IntaraClient:
         keyword: str,
         location_code: int = 2840,
         live: bool = False,
+        use_cache: bool = True,
     ) -> dict:
         if isinstance(keyword, str):
             keyword = [keyword]
@@ -31,6 +32,7 @@ class IntaraClient:
             "keyword": keyword,
             "location_code": location_code,
             "live": live,
+            "use_cache": use_cache,
         }
         response = self.client.get(url, params=querystring, timeout=90)
         if response.status_code == 202:
@@ -42,6 +44,7 @@ class IntaraClient:
         keyword: str,
         location_code: int = 2840,
         live: bool = False,
+        use_cache: bool = True,
     ) -> dict:
         if isinstance(keyword, str):
             keyword = [keyword]
@@ -51,6 +54,7 @@ class IntaraClient:
             "keyword": keyword,
             "location_code": location_code,
             "live": live,
+            "use_cache": use_cache,
         }
 
         response = self.client.get(url, params=querystring, timeout=90)
